@@ -1,2 +1,4 @@
 # Slice-Tower
-SLICE <a href='https://fmj-games.itch.io/slice-tower)https://fmj-games.itch.io/slice-tower'></a>
+<p align='center'>
+    Slice <a href='https://fmj-games.itch.io/slice-tower'>roman.beskrovnyy@gmail.com</a>
+</p>
