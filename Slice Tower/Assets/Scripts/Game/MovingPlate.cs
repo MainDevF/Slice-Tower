@@ -1,7 +1,6 @@
-
 using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class MovingPlate : MonoBehaviour
 {
@@ -11,7 +10,7 @@ public class MovingPlate : MonoBehaviour
 
     public MoveDirection MoveDirection;
 
-    [SerializeField] private float moveSpeed = 1.0f;
+    [SerializeField] private float _moveSpeed = 1.0f;
 
     private void OnEnable()
     {
@@ -27,7 +26,7 @@ public class MovingPlate : MonoBehaviour
 
     public bool Stop()
     {
-        moveSpeed = 0f;
+        _moveSpeed = 0f;
         float trimmings = GetTrimmings();
 
         float max = MoveDirection == MoveDirection.Z ? LastPlate.transform.localScale.z : LastPlate.transform.localScale.x;
@@ -53,6 +52,8 @@ public class MovingPlate : MonoBehaviour
             {
                 SplitPlateOnX(trimmings, direction);
             }
+
+            Destroy(LastPlate.gameObject, 20f);
 
             LastPlate = this;
 
@@ -126,11 +127,11 @@ public class MovingPlate : MonoBehaviour
     {
         if(MoveDirection == MoveDirection.Z)
         {
-            transform.position += transform.forward * Time.deltaTime * moveSpeed;
+            transform.position += transform.forward * Time.deltaTime * _moveSpeed;
         }
         else
         {
-            transform.position += transform.right * Time.deltaTime * moveSpeed;
+            transform.position += transform.right * Time.deltaTime * _moveSpeed;
         }
 
     }
