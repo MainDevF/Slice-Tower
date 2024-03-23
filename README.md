@@ -1,2 +1,2 @@
 # Slice-Tower
-SLICE
+SLICE https://fmj-games.itch.io/slice-tower
